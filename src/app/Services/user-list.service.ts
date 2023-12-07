@@ -5,19 +5,23 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UserListService {
-userEndpoint:string='http://localhost:3000/users';
-userColorEndPoint:string=' http://localhost:3000/userColors';
-availableColorEndPoint:string='http://localhost:3000/AvailableColors';
+userEndpoint:string='http://localhost:5038/api';
+userColorEndPoint:string=' http://localhost:5038/api/user-color';
+availableColorEndPoint:string='http://localhost:5038/api/all-color';
   constructor(private http:HttpClient) { }
 
   GetAllUsers(){
-    return this.http.get(`${this.userEndpoint}`);
+    return this.http.get(`${this.userEndpoint+'/get'}`);
   }
 
   GetUserColors(){
-    return this.http.get(`${this.userColorEndPoint}`);
+    return this.http.get(`${this.userColorEndPoint+'/get'}`);
   }
+  GetUserColorsById(id:string){
+    return this.http.get(`${this.userColorEndPoint+'/get-by-id/'+id}`);
+  }
+
   GetAllColors(){
-    return this.http.get(`${this.availableColorEndPoint}`);
+    return this.http.get(`${this.availableColorEndPoint+'/getAll'}`);
   }
 }
