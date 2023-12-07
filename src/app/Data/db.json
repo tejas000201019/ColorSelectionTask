@@ -1,0 +1,46 @@
+{
+    "users": [
+       {
+        "UserId": "1",
+        "UserType": "admin"
+      },
+       {
+        "UserId": "2",
+        "UserType": "user"
+      }
+    ],
+    "userColors":[
+      {
+        "UserId":"2",
+        "colors":[
+          {
+            "ColorId":"1"
+          },
+          {
+            "ColorId":"2"
+          },
+          {
+            "ColorId":"3"
+          }
+        ]
+      }
+    ],
+    "AvailableColors":[
+      {
+        "ColorId":"1",
+        "ColorName":"green"
+      },
+      {
+        "ColorId":"2",
+        "ColorName":"red"
+      },
+      {
+        "ColorId":"3",
+        "ColorName":"yellow"
+      },
+      {
+        "ColorId":"4",
+        "ColorName":"blue"
+      }
+    ]
+  }
