@@ -1,0 +1,22 @@
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" [routerLink]="['dashboard']">Dashboard</a>
+  </nav>
+<form [formGroup]="userForm" (ngSubmit)="onSubmit(userForm)">
+    <div class="container text-center">
+
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="exampleInputEmail1">User ID</label>
+                <input type="text" class="form-control" formControlName="UserId"  placeholder="Enter User ID">
+
+            </div>
+            <div class="form-group">
+                <select  formControlName="UserType" id="UserType" class="form-control">
+                    <option value="admin" selected>Admin</option>
+                    <option value="user">User</option>
+                </select>
+            </div>
+            <button name="btnSaveUser" class="btn btn-primary form-control" type="submit">Register User</button>
+        </div>
+    </div>
+</form>

@@ -1,12 +1,14 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { User } from '../Models/User';
+import { UserColor } from '../Models/UserColor';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserListService {
-userEndpoint:string='http://localhost:5038/api';
-userColorEndPoint:string=' http://localhost:5038/api/user-color';
+userEndpoint:string='http://localhost:5038/api/all-user';
+userColorEndPoint:string='http://localhost:5038/api/user-color';
 availableColorEndPoint:string='http://localhost:5038/api/all-color';
   constructor(private http:HttpClient) { }
 
@@ -14,10 +16,22 @@ availableColorEndPoint:string='http://localhost:5038/api/all-color';
     return this.http.get(`${this.userEndpoint+'/get'}`);
   }
 
+  SaveUser(body:User){
+    console.log('InService: ',`${this.userEndpoint+'/add-user'}`);
+    console.log('BodyData: ',JSON.stringify(body));
+    const headerData = {headers:new HttpHeaders({'Content-Type':'application/json'})};
+    return this.http.post(`${this.userEndpoint+'/add-user'}`,JSON.stringify(body),headerData);
+  }
+
+  SaveUserColor(body:UserColor){
+    const headerData = {headers:new HttpHeaders({'Content-Type':'application/json'})};
+    return this.http.post(`${this.userColorEndPoint+'/save-user-color'}`,JSON.stringify(body),headerData);
+  }
+
   GetUserColors(){
     return this.http.get(`${this.userColorEndPoint+'/get'}`);
   }
-  GetUserColorsById(id:string){
+  GetUserColorsById(id:number){
     return this.http.get(`${this.userColorEndPoint+'/get-by-id/'+id}`);
   }
 

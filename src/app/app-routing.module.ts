@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
+import { DashboardComponent } from './Client/dashboard/dashboard.component';
+import { UserRegisterComponent } from './Client/user-register/user-register.component';
 import { ColorPickerComponent } from './Modules/admin/color-picker/color-picker.component';
 import { UserListComponent } from './Modules/admin/user-list/user-list.component';
 
 const routes: Routes = [
-  {path:'',component:UserListComponent},
+  {path:'',redirectTo:'Home',pathMatch:'full'},
+  {path:'Home',component:UserRegisterComponent},
+  {path:'dashboard',component:DashboardComponent},
   {path:'user-list',component:UserListComponent},
   {path:'color-picker',component:ColorPickerComponent},
   {path:'**',component:AppComponent}

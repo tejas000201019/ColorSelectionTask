@@ -7,15 +7,21 @@ import { AdminModule } from './Modules/admin/admin.module';
 import {HttpClientModule} from '@angular/common/http'
 import { UserListService } from './Services/user-list.service';
 import { CommonService } from './Services/Common.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { UserRegisterComponent } from './Client/user-register/user-register.component';
+import { DashboardComponent } from './Client/dashboard/dashboard.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UserRegisterComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AdminModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     UserListService,

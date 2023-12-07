@@ -1,0 +1,6 @@
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" [routerLink]="['user-list']">Add Color</a>
+  </nav>
+<div class="container">
+    <div *ngFor="let color of userList.colors" [ngStyle]="{backgroundColor:color.ColorName}"></div>
+</div>

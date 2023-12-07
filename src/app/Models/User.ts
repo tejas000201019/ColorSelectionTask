@@ -1,7 +1,7 @@
 export class User{
-    UserId:string;
+    UserId:number;
     UserType:string;
-    constructor(userid:string,type:string){
+    constructor(userid:number,type:string){
         this.UserId=userid;
         this.UserType=type;
     }
