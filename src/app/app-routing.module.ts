@@ -9,8 +9,8 @@ import { UserListComponent } from './Modules/admin/user-list/user-list.component
 const routes: Routes = [
   {path:'',redirectTo:'Home',pathMatch:'full'},
   {path:'Home',component:UserRegisterComponent},
-  {path:'dashboard',component:DashboardComponent},
-  {path:'user-list',component:UserListComponent},
+  {path:'Dashboard',component:DashboardComponent},
+  {path:'Users',component:UserListComponent},
   {path:'color-picker',component:ColorPickerComponent},
   {path:'**',component:AppComponent}
 ];
