@@ -30,10 +30,10 @@ export class UserRegisterComponent implements OnInit {
         console.log('ResultingData: ', data);
       });
 
-      let userColor = new UserColor(Number(form.value.UserId),new Color[0]);
-      this.userService.SaveUserColor(userColor).subscribe((userData)=>{
-        console.log('UserColor: ',userData);
-      })
+      // let userColor = new UserColor(Number(form.value.UserId),new Color[0]);
+      // this.userService.SaveUserColor(userColor).subscribe((userData)=>{
+      //   console.log('UserColor: ',userData);
+      // })
       
       this.userForm.reset();
       localStorage.setItem('Current_User',form.value.UserId);
