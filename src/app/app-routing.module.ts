@@ -5,7 +5,7 @@ import { ColorPickerComponent } from './Modules/admin/color-picker/color-picker.
 import { UserListComponent } from './Modules/admin/user-list/user-list.component';
 
 const routes: Routes = [
-  {path:'',component:AppComponent},
+  {path:'',component:UserListComponent},
   {path:'user-list',component:UserListComponent},
   {path:'color-picker',component:ColorPickerComponent},
   {path:'**',component:AppComponent}

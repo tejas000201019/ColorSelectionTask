@@ -11,13 +11,15 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>{{1}}</td>
+                <tr *ngFor="let user of userList">
+                    <td>{{user.UserId}}</td>
                     <td>
                         <select>
+                            <option *ngFor="let colorOption of user.colors" [value]="colorOption.ColorId" 
+                            [ngStyle]="{backgroundColor:colorOption.ColorName}">{{colorOption.ColorName}}</option>   
                         </select>
                     </td>
-                    <td><button class="btn btn-primary">+</button></td>
+                    <td><button class="btn btn-primary" (click)="OpenColorPicker(user)">+</button></td>
                 </tr>
             </tbody>
         </table>

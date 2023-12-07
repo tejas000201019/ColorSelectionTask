@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AdminModule } from './Modules/admin/admin.module';
 import {HttpClientModule} from '@angular/common/http'
+import { UserListService } from './Services/user-list.service';
+import { CommonService } from './Services/Common.service';
 @NgModule({
   declarations: [
     AppComponent
@@ -15,7 +17,10 @@ import {HttpClientModule} from '@angular/common/http'
     AdminModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    UserListService,
+    CommonService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

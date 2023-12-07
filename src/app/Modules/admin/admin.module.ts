@@ -14,7 +14,8 @@ import { ColorPickerComponent } from './color-picker/color-picker.component';
     CommonModule
   ],
   exports:[
-    UserListComponent
+    UserListComponent,
+    ColorPickerComponent
   ]
 })
 export class AdminModule { }
