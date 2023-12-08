@@ -10,11 +10,13 @@ import { CommonService } from './Services/Common.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserRegisterComponent } from './Client/user-register/user-register.component';
 import { DashboardComponent } from './Client/dashboard/dashboard.component';
+import { LoginComponent } from './Client/Login/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
     UserRegisterComponent,
-    DashboardComponent
+    DashboardComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

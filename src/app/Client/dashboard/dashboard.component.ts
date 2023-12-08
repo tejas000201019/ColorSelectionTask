@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Color } from 'src/app/Models/Color';
 import { UserColor } from 'src/app/Models/UserColor';
 import { UserListService } from 'src/app/Services/user-list.service';
 
@@ -8,13 +9,17 @@ import { UserListService } from 'src/app/Services/user-list.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-userList:UserColor;
+//userList:UserColor;
+colorList:Color[]=[];
   constructor(private userService:UserListService){}
   ngOnInit(): void {
     //get userid from localstorage.
     let currentUser =  localStorage.getItem('Current_User');
-    this.userService.GetUserColorsById(Number(currentUser)).subscribe((data)=>{
-      this.userList = data as UserColor;
+    this.userService.GetUserColorsById(Number(currentUser)).subscribe((data:UserColor)=>{
+      // this.userList = data as UserColor;
+      console.log('Data : ',data);
+      this.colorList = data.colors;
+      console.log('Colors: ',this.colorList);
     });
   }
 

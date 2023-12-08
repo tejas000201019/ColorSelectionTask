@@ -35,6 +35,10 @@ availableColorEndPoint:string='http://localhost:5038/api/all-color';
     return this.http.get(`${this.userColorEndPoint+'/get-by-id/'+id}`);
   }
 
+  GetByUserID(id){
+    return this.http.get(`${this.userEndpoint+'/get-by-id/'+id}`);
+  }
+  
   GetAllColors(){
     return this.http.get(`${this.availableColorEndPoint+'/getAll'}`);
   }

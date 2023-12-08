@@ -2,5 +2,5 @@
     <a class="navbar-brand" routerLink="/Users">Add Color</a>
   </nav>
 <div class="container">
-    <div *ngFor="let color of userList.colors" [ngStyle]="{backgroundColor:color.ColorName}"></div>
+    <div *ngFor="let colorItem of colorList" [ngStyle]="{backgroundColor:colorItem.ColorName}">{{colorItem.ColorName}}</div>
 </div>
