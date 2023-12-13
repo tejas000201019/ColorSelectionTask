@@ -24,5 +24,10 @@ OpenColorPicker(currentUser:any){
 this.commonService.setUserColorData(currentUser);
 this.router.navigate(['color-picker']);
 }
-
+onOptionsSelected(value:string){
+ let currentUser = localStorage.getItem('Current_User');
+ console.log('Current User: ',currentUser);
+ this.commonService.setSelectedColorId(Number(value));
+ this.router.navigate(['color-picker']);
+}
 }

@@ -1,3 +1,6 @@
-<div *ngFor="let colorItem of listOfColors"
+<div *ngFor="let colorItem of listOfColors">
+    <img src="/src/assets/delete.png" alt="image" (click)="deleteColor(colorItem)">
+<div
  [id]="colorItem.ColorId" 
  [ngStyle]="{backgroundColor:colorItem.ColorName}" (click)="AddToUser(colorItem)">{{colorItem.ColorName}}</div>
+</div>

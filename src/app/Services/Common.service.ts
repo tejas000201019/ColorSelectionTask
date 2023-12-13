@@ -2,6 +2,7 @@ import { UserColor } from "../Models/UserColor";
 
 export class CommonService{
     userData:UserColor;
+    colorId:number;
     constructor(){}
 
     setUserColorData(object:any){
@@ -10,5 +11,13 @@ export class CommonService{
 
     getUserColorData(){
         return this.userData;
+    }
+
+    setSelectedColorId(id:number){
+        this.colorId = id as number;
+    }
+
+    getSelectedColorId(){
+        return this.colorId;
     }
 }

@@ -28,6 +28,12 @@ availableColorEndPoint:string='http://localhost:5038/api/all-color';
     return this.http.post(`${this.userColorEndPoint+'/save-user-color'}`,JSON.stringify(body),headerData);
   }
 
+  UpdateUserColor(body:UserColor){
+    let id = body.UserId;
+    const headerData = {headers:new HttpHeaders({'Content-Type':'application/json'})};
+    return this.http.put(`${this.userColorEndPoint+'/update/'+id}`,JSON.stringify(body),headerData);
+  }
+
   GetUserColors(){
     return this.http.get(`${this.userColorEndPoint+'/get'}`);
   }
@@ -35,7 +41,7 @@ availableColorEndPoint:string='http://localhost:5038/api/all-color';
     return this.http.get(`${this.userColorEndPoint+'/get-by-id/'+id}`);
   }
 
-  GetByUserID(id){
+  GetByUserID(id:number){
     return this.http.get(`${this.userEndpoint+'/get-by-id/'+id}`);
   }
   

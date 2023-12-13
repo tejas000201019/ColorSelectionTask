@@ -1,5 +1,7 @@
-<nav class="navbar navbar-light bg-light">
+<nav class="navbar navbar-light bg-light d-flex">
     <a class="navbar-brand" routerLink="/Users">Add Color</a>
+    <a class="navbar-brand" routerLink="/Users">Randomize Color</a>
+    <a class="navbar-brand" routerLink="/Users">Delete Profile</a>
   </nav>
 <div class="container">
     <div *ngFor="let colorItem of colorList" [ngStyle]="{backgroundColor:colorItem.ColorName}">{{colorItem.ColorName}}</div>

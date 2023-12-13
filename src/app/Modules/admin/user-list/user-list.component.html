@@ -14,7 +14,7 @@
                 <tr *ngFor="let user of userList">
                     <td>{{user.UserId}}</td>
                     <td>
-                        <select>
+                        <select #drpUserColor  (change)='onOptionsSelected(drpUserColor.value)'>
                             <option *ngFor="let colorOption of user.colors" [value]="colorOption.ColorId" 
                             [ngStyle]="{backgroundColor:colorOption.ColorName}">{{colorOption.ColorName}}</option>   
                         </select>
