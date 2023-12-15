@@ -1,1 +1,23 @@
-<router-outlet></router-outlet>
+<div class="tabs-resp-custom" *ngIf="userLoggedIn;else simple_outlet">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/Dashboard" routerLinkActive="active">Dashboard</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/randomize-color" routerLinkActive="active">Radomize Colors</a>
+        </li>
+        <li class="nav-item">
+            <!-- <a class="nav-link" [routerLink]="['tab2']" routerLinkActive="active">Tab 2</a> -->
+            <a class="nav-link" routerLink="/delete-user" routerLinkActive="active">Delete Profile</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" (click)="LogOut()" routerLinkActive="active">LogOut</a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+<ng-template #simple_outlet><router-outlet></router-outlet></ng-template>

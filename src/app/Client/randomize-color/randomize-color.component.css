@@ -1,0 +1,14 @@
+.disabled-img {
+    /* Add styles to make the image appear disabled */
+    opacity: 0.5; /* Change opacity */
+    /* or */
+    filter: grayscale(100%); /* Convert to grayscale */
+    /* or */
+    pointer-events: none; /* Disable pointer events */
+    /* or any other styling you prefer */
+  }
+
+  .disabled-row {
+    /* Style for disabled rows */
+    opacity: 0.6; /* or any other visual cue to indicate disabled state */
+  }

@@ -1,6 +1,7 @@
-<div *ngFor="let colorItem of listOfColors">
-    <img src="/src/assets/delete.png" alt="image" (click)="deleteColor(colorItem)">
-<div
+
+<div  class="colorDiv" *ngFor="let colorItem of listOfColors"
  [id]="colorItem.ColorId" 
- [ngStyle]="{backgroundColor:colorItem.ColorName}" (click)="AddToUser(colorItem)">{{colorItem.ColorName}}</div>
+ [ngStyle]="{backgroundColor:colorItem.ColorName}"  (click)="AddToUser(colorItem)">
+ <img *ngIf="selectedColorForDelete" src="assets/delete.png" width="50px" height="50px" (click)="deleteColor(colorItem)">
+ {{colorItem.ColorName}}
 </div>

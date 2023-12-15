@@ -48,4 +48,8 @@ availableColorEndPoint:string='http://localhost:5038/api/all-color';
   GetAllColors(){
     return this.http.get(`${this.availableColorEndPoint+'/getAll'}`);
   }
+  
+  DeleteUserById(id:number){
+    return this.http.delete(`${this.userEndpoint+'/delete-by-id/'+id}`);
+  }
 }

@@ -17,9 +17,9 @@ colorList:Color[]=[];
     let currentUser =  localStorage.getItem('Current_User');
     this.userService.GetUserColorsById(Number(currentUser)).subscribe((data:UserColor)=>{
       // this.userList = data as UserColor;
-      console.log('Data : ',data);
       this.colorList = data.colors;
-      console.log('Colors: ',this.colorList);
+      // let sortOrder:number[] = data.colors.map(({ ColorId }) => Number(ColorId));
+      // this.colorList.sort((a, b) => sortOrder[a.ColorId] - sortOrder[b.ColorId]);
     });
   }
 

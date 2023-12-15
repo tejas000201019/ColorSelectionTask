@@ -37,7 +37,7 @@ export class UserRegisterComponent implements OnInit {
       
       this.userForm.reset();
       localStorage.setItem('Current_User',form.value.UserId);
-      this.router.navigate(['Dashboard']);
+      this.router.navigate(['Login']);
     }
     return;
   }
