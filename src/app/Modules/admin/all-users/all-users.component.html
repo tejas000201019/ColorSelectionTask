@@ -1,0 +1,28 @@
+<div class="container mt-5">
+    <hr>
+    <h2 class="text-center">Manage Users</h2>
+    <div>
+        <table class="table table-stripped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>User Role</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of userList;let i = index">
+                    <td><input type="text" disabled [value]="user.UserId" #userId></td>
+                    <td>
+                       <select  id="UserType" class="form-control" [(ngModel)]="UserTypeData[i]" #UserType>
+                            <option value="">Select Role</option>
+                            <option *ngFor="let itemArr of roleDropdownArray" [value]="itemArr.id" >{{itemArr.name}}</option>
+                        </select> 
+                        
+                    </td>
+                    <td><button name="btnUpdateUser" class="btn btn-primary form-control" type="button" (click)="updateUser(userId,UserType)">Update</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

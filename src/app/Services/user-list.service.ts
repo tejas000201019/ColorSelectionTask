@@ -52,4 +52,10 @@ availableColorEndPoint:string='http://localhost:5038/api/all-color';
   DeleteUserById(id:number){
     return this.http.delete(`${this.userEndpoint+'/delete-by-id/'+id}`);
   }
+
+  UpdateUser(body:User){
+    let id = body.UserId;
+    const headerData = {headers:new HttpHeaders({'Content-Type':'application/json'})};
+    return this.http.put(`${this.userEndpoint+'/update/'+id}`,JSON.stringify(body),headerData);
+  }
 }

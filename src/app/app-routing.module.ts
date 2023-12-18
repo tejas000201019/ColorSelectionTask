@@ -8,6 +8,7 @@ import { RandomizeColorComponent } from './Client/randomize-color/randomize-colo
 import { UserRegisterComponent } from './Client/user-register/user-register.component';
 import { authGuard } from './Guards/auth.guard';
 import { authorizedGuard } from './Guards/authorized.guard';
+import { AllUsersComponent } from './Modules/admin/all-users/all-users.component';
 import { ColorPickerComponent } from './Modules/admin/color-picker/color-picker.component';
 import { UserListComponent } from './Modules/admin/user-list/user-list.component';
 
@@ -20,8 +21,9 @@ const routes: Routes = [
   {path:'Users',component:UserListComponent,canActivate:[authGuard]},
   {path:'color-picker',component:ColorPickerComponent,canActivate:[authGuard]},
   {path:'randomize-color',component:RandomizeColorComponent,canActivate:[authGuard]},
+  {path:'all-users',component:AllUsersComponent,canActivate:[authGuard,authorizedGuard]},
   {path:'delete-user',component:DeleteUserComponent,canActivate:[authGuard]},
-  {path:'**',component:AppComponent}
+   {path:'**',component:AppComponent}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
